@@ -1,27 +1,36 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
+int main() {
+    setlocale(LC_ALL,"RUS"); 
+    double corner;
+    std::cout << "Введите угол" << std::endl;
+    std::cin >> corner;
+    
+    double cos_result;
+    int double_corner = 2 * corner;
+    if  (cos(double_corner) != 1)  
+    {  
+        cos_result = (1 + sin(double_corner)) / (1 - cos(double_corner));
+        std::cout << "F(x1)="<< cos_result << std::endl;
+    }
+    else 
+    {
+        std::cout << "Неверный ввод для F(x1)" << std::endl;
+    }
 
-using namespace std;
-int main(int argc, char* argv[])
-{
-double x, s, s2;
-cout<<"vvedite ygol"<<endl;
-cin>>x;
-if  ( cos((double)2*x)!=1)
-{
-s=(1+sin((double)2*x))/(1-cos((double)2*x));
-cout<<"F(x1)="<<s<<endl;
-}
-else if  ( cos((double)2*x)==1)
-cout<<"neverniy input for F(x1) "<<endl;
-if  (tan((double)x)!=1)
-{
-s2=(1+tan((double)x)*tan((double)x))/(1-tan((double)x)*tan((double)x));
-cout<<"F(X2)="<<s2<<endl;
-}
-else if (tan((double)x)==1)
-cout<<"neverniy input for F(x2) "<<endl;
-system ("pause");
-return 0;
+    double tg_result;
+    double tg = tan(corner);
+    if  (tg != 1) 
+    {
+        tg_result = (1 + tg * tg) / (1 - tg * tg);
+        std::cout << "F(X2)=" << tg_result << std::endl;
+    }
+    else 
+    {
+        std::cout << "Неверный ввод для F(x2)" << std::endl;
+    }
+
+    system("pause");
+    return 0;
 }
