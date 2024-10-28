@@ -1,8 +1,11 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
+
 int main(){
     int n,k;
     std:: cin >> n;
     std:: vector <int> a(pow(10,3) + 1);
+    
     for (int i = 0; i < n;++i){
         std:: cin >> k;
         a[k] += 1;
