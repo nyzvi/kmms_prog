@@ -10,8 +10,8 @@ void shell_sort (std::vector <int> shell, std::vector <int> random_num, std::vec
         for (int j = b; j < i; j++) {
             int temp = random_num[i];
             int n = j;
-            for(;n >= b && random_num[n-b] > temp;n -= b){
-                random_num[n] = random_num[n-b];
+            for(;n >= b && random_num[n - b] > temp;n -= b){
+                random_num[n] = random_num[n - b];
                 }
             random_num[n] = temp;
         }
@@ -19,7 +19,7 @@ void shell_sort (std::vector <int> shell, std::vector <int> random_num, std::vec
 }
 
 
-std::vector<int> gladkie(int n){
+std::vector <int> gladkie(int n){
     int k = 0;
     std::vector<int> glad;
     int pow3 = 1;
@@ -40,12 +40,12 @@ std::vector<int> gladkie(int n){
 int main(){
     std::mt19937 mt(10000);
     std::vector <int> size = {1000, 10000, 100000, 1000000};
-    for (int i=0;i<4;i++){
+    for (int i = 0; i < 4; i++){
         std::vector <int> random_numbers(size[i]);
-         for(int j=0;j<size[i];j++){
+         for(int j = 0; j < size[i]; j++){
             random_numbers[j] = mt();
         }
-        std::vector<int> gladkie_shella = gladkie(size[i]);
+        std::vector <int> gladkie_shella = gladkie(size[i]);
 
 
         auto start_shella = std::chrono::high_resolution_clock::now();
