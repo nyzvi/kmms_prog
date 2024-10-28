@@ -2,7 +2,6 @@
 #include <iostream>
 
 int main() {
-    setlocale(LC_ALL,"RUS"); 
     double corner;
     std::cout << "Введите угол" << std::endl;
     std::cin >> corner;
