@@ -7,20 +7,20 @@
 int global_m = 10;
 
 void merge(std::vector <int> &random_numbers_merge, int left, int mid, int right) {
-    int n1 = mid - left + 1;
-    int n2 = right - mid;
+    int size_left = mid - left + 1;
+    int size_right = right - mid;
 
-    std::vector <int> L(n1), R(n2);
+    std::vector <int> L(size_left), R(size_right);
 
-    for (int i = 0; i < n1; i++)
+    for (int i = 0; i < size_left; i++)
         L[i] = random_numbers_merge[left + i];
-    for (int j = 0; j < n2; j++)
+    for (int j = 0; j < size_right; j++)
         R[j] = random_numbers_merge[mid + 1 + j];
 
     int i = 0, j = 0;
     int k = left;
 
-    while (i < n1 && j < n2) {
+    while (i < size_left && j < size_right) {
         if (L[i] <= R[j]) {
             random_numbers_merge[k] = L[i];
             i++;
@@ -32,13 +32,13 @@ void merge(std::vector <int> &random_numbers_merge, int left, int mid, int right
         k++;
     }
 
-    while (i < n1) {
+    while (i < size_left) {
         random_numbers_merge[k] = L[i];
         i++;
         k++;
     }
 
-    while (j < n2) {
+    while (j < size_right) {
         random_numbers_merge[k] = R[j];
         j++;
         k++;
@@ -67,20 +67,20 @@ void vstavka_sort(std::vector <int> &random_numbers_vstavka, int left, int right
 }
 
 void merge_vstavka(std::vector<int> &random_numbers_vstavka, int left, int mid, int right) {
-    int n1 = mid - left + 1;
-    int n2 = right - mid;
+    int size_left = mid - left + 1;
+    int size_right = right - mid;
 
-    std::vector<int> L(n1), R(n2);
+    std::vector<int> L(size_left), R(size_right);
 
-    for (int i = 0; i < n1; i++)
+    for (int i = 0; i < size_left; i++)
         L[i] = random_numbers_vstavka[left + i];
-    for (int j = 0; j < n2; j++)
+    for (int j = 0; j < size_right; j++)
         R[j] = random_numbers_vstavka[mid + 1 + j];
 
     int i = 0, j = 0;
     int k = left;
 
-    while (i < n1 && j < n2) {
+    while (i < size_left && j < size_right) {
         if (L[i] <= R[j]) {
             random_numbers_vstavka[k] = L[i];
             i++;
@@ -92,13 +92,13 @@ void merge_vstavka(std::vector<int> &random_numbers_vstavka, int left, int mid, 
         k++;
     }
 
-    while (i < n1) {
+    while (i < size_left) {
         random_numbers_vstavka[k] = L[i];
         i++;
         k++;
     }
 
-    while (j < n2) {
+    while (j < size_right) {
         random_numbers_vstavka[k] = R[j];
         j++;
         k++;
