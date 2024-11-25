@@ -1,7 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <random>
-#include <cmath>
 
 int merge(std::vector<int> &arr, int left, int mid, int right) {
     int size_left = mid - left + 1;
