@@ -2,19 +2,19 @@
 #include "menu_func.hpp"
 
 const fym::MenuItem fym::DATABASE = {
-    "1 - Базы данных", fym::database, &fym::PROGRAM
+    "1 - Базы данных", fym::database, &fym::ALGORITHM
 };
 
 const fym::MenuItem fym::MULTITHREADED_PROGRAMMING = {
-    "2 - Многопоточное программирование", fym::multithreaded_programming, &fym::PROGRAM
+    "2 - Многопоточное программирование", fym::multithreaded_programming, &fym::ALGORITHM
 };
 
 const fym::MenuItem fym::NETWORK_TECHNOLOGIES = {
-    "3 - Сетевые технологии", fym::network_technologies, &fym::PROGRAM
+    "3 - Сетевые технологии", fym::network_technologies, &fym::ALGORITHM
 };
 
 const fym::MenuItem fym::GO_BACK = {
-    "0 - Выйти в предыдущее меню", fym::go_back, &fym::PROGRAM
+    "0 - Выйти в предыдущее меню", fym::go_back, &fym::ALGORITHM
 };
 
 namespace {
@@ -28,11 +28,11 @@ namespace {
 }
 //
 const fym::MenuItem fym::PROGRAM = {
-    "1 - Изучать языки программирования", fym::show_menu, &fym::SHOW_MENU, program_children, size_program
+    "1 - Изучать языки программирования", fym::program, &fym::SHOW_MENU
 };
 
 const fym::MenuItem fym::ALGORITHM = {
-    "2 - Алгоритмы и структуры", fym::algorithm, &fym::SHOW_MENU
+    "2 - Алгоритмы и структуры", fym::show_menu, &fym::SHOW_MENU, program_children, size_program
 };
 
 const fym::MenuItem fym::ANOTHERM = {
